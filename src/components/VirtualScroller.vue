@@ -282,9 +282,11 @@ export default {
     },
 
     handleScroll (e) {
+        console.log('S1')
       if (!this.$_scrollDirty) {
         this.$_scrollDirty = true
-        this.$emit('scrolled', e);
+          console.log('S2')
+        this.$emit('scrolled', e)
         requestAnimationFrame(() => {
           this.$_scrollDirty = false
           this.updateVisibleItems()
