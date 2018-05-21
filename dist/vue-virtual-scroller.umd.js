@@ -354,7 +354,7 @@ var VirtualScroller = { render: function render() {
     }) : [_vm._l(_vm.visibleItems, function (item, index) {
       return _vm._t("default", null, { item: item, itemIndex: _vm.$_startIndex + index, itemKey: _vm.keysEnabled && item[_vm.keyField] || undefined });
     })]], 2), _vm._v(" "), _vm._t("after-content")], 2), _vm._v(" "), _vm._t("after-container"), _vm._v(" "), _c('resize-observer', { on: { "notify": _vm.handleResize } })], 2);
-  }, staticRenderFns: [], _scopeId: 'data-v-2b1f2e05',
+  }, staticRenderFns: [], _scopeId: 'data-v-727d6836',
   name: 'virtual-scroller',
 
   mixins: [Scroller],
@@ -579,6 +579,7 @@ var VirtualScroller = { render: function render() {
 
       if (!this.$_scrollDirty) {
         this.$_scrollDirty = true;
+        this.$emit('scroll');
         requestAnimationFrame(function () {
           _this3.$_scrollDirty = false;
           _this3.updateVisibleItems();
@@ -610,7 +611,7 @@ var RecycleList = { render: function render() {
         } } }, [_c('div', { ref: "wrapper", staticClass: "item-wrapper", style: { height: _vm.totalHeight + 'px' } }, _vm._l(_vm.pool, function (view) {
       return _c('div', { key: view.nr.id, staticClass: "item-view", style: { transform: 'translateY(' + view.top + 'px)' } }, [_vm._t("default", null, { item: view.item, index: view.nr.index, active: view.nr.used })], 2);
     })), _vm._v(" "), _vm._t("after-container"), _vm._v(" "), _c('resize-observer', { on: { "notify": _vm.handleResize } })], 2);
-  }, staticRenderFns: [], _scopeId: 'data-v-2277f571',
+  }, staticRenderFns: [], _scopeId: 'data-v-68940351',
   name: 'RecycleList',
 
   mixins: [Scroller],
