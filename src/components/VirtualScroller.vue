@@ -100,7 +100,7 @@ export default {
     delayPreviousItems: {
       type: Boolean,
       default: false,
-    },
+    }
   },
 
   data () {
@@ -284,6 +284,7 @@ export default {
     handleScroll () {
       if (!this.$_scrollDirty) {
         this.$_scrollDirty = true
+        this.$emit('scroll')
         requestAnimationFrame(() => {
           this.$_scrollDirty = false
           this.updateVisibleItems()
