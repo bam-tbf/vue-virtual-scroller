@@ -281,10 +281,10 @@ export default {
       this.$_oldScrollBottom = null
     },
 
-    handleScroll () {
+    handleScroll (e) {
       if (!this.$_scrollDirty) {
         this.$_scrollDirty = true
-        this.$emit('scroll')
+        this.$emit('scrolled', e);
         requestAnimationFrame(() => {
           this.$_scrollDirty = false
           this.updateVisibleItems()
