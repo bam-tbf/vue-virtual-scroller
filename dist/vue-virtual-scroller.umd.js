@@ -574,12 +574,14 @@ var VirtualScroller = { render: function render() {
       this.$_oldScrollTop = null;
       this.$_oldScrollBottom = null;
     },
-    handleScroll: function handleScroll() {
+    handleScroll: function handleScroll(e) {
       var _this3 = this;
 
+      console.log('S1');
       if (!this.$_scrollDirty) {
         this.$_scrollDirty = true;
-        this.$emit('scroll');
+        console.log('S2');
+        this.$emit('scrolled', e);
         requestAnimationFrame(function () {
           _this3.$_scrollDirty = false;
           _this3.updateVisibleItems();
